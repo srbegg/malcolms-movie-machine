@@ -646,7 +646,11 @@ function setError(msg) {
 async function callClaude(systemPrompt, userPrompt) {
   const res = await fetch(API_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "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",
+      "anthropic-dangerous-direct-browser-access": "true"
+    },
     body: JSON.stringify({
       model: MODEL,
       max_tokens: 1000,
